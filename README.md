@@ -9,6 +9,12 @@ Please follow the instructions below to build ns3-3.33
 https://www.nsnam.org/releases/ns-3-33/documentation/
 https://www.nsnam.org/wiki/Installation#Linux
 
+After building successfully, you should be able to see two file path:
+../ns-3.33/src/internet/model/..
+../ns-3.33/scratch/..
+Replace all the files in these two folders with the files in this github repo under model and scratch folder 
+Then build gain, and you should be ready to run. 
+If this does not work, I would suggest downloading my virtual machine image to have a try.
 
 2. I would also share my virtual machine image, you can get one from here [Coming soon]
 
@@ -44,7 +50,10 @@ CMD argument options with default value inside bracket[]:
 2. Export txt stat file and show the graphs:
 
 ./waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10" >> output_25_10.txt (you can set any output file, and any running cmd options if you want)
+
 Make sure you have python 3.8 with matplotlib installed
+
 Then run the python script main.py, make sure the output file is in the same directory
+
 I have provided the main.py in /Draw and my txt file to generate my graphs in the /Graph （LF be replaced by CRLF becuase of github）
 

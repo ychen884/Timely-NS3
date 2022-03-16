@@ -12,15 +12,8 @@ https://www.nsnam.org/wiki/Installation#Linux
 
 2. I would also share my virtual machine image, you can get one from here [Coming soon]
 
-3. Scenerio: a simple incast topology with one sink and N source
-
-           sinker(node0)
-               	|
-               	|
-  ---switch(fixed bandwidth)------
-  |   |   |                    	|
-  n1  n2  n3 . . . . . . . . . .nK
-n1 to nk are sender nodes, trying to send as much as possible
+3. Scenerio: a simple incast topology with one sink and N source, with limited egress bandwidth.
+Please check the comment in test.cc for more detailed topology description.
 
 
 ## Run
@@ -53,5 +46,5 @@ CMD argument options with default value inside bracket[]:
 ./waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10" >> output_25_10.txt (you can set any output file, and any running cmd options if you want)
 Make sure you have python 3.8 with matplotlib installed
 Then run the python script main.py, make sure the output file is in the same directory
-I have provided the main.py in /Draw and my txt file to generate my graphs in the /Graph
+I have provided the main.py in /Draw and my txt file to generate my graphs in the /Graph （LF be replaced by CRLF becuase of github）
 

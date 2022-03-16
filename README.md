@@ -6,14 +6,21 @@ This is a Timely implementation based on TCP congestion control module in ns3
 
 1. NS3 version 3.33
 Please follow the instructions below to build ns3-3.33
+
 https://www.nsnam.org/releases/ns-3-33/documentation/
+
 https://www.nsnam.org/wiki/Installation#Linux
 
 After building successfully, you should be able to see two file path:
+
 ../ns-3.33/src/internet/model/..
+
 ../ns-3.33/scratch/..
+
 Replace all the files in these two folders with the files in this github repo under model and scratch folder 
+
 Then build gain, and you should be ready to run. 
+
 If this does not work, I would suggest downloading my virtual machine image to have a try.
 
 2. I would also share my virtual machine image, you can get one from here [Coming soon]
@@ -28,8 +35,11 @@ Please check the comment in test.cc for more detailed topology description.
 
 Example:
 running  10 nodes sending into one sink node with a egress bandwidth 25Mbps
+
 /waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10"
+
 The command below runs the same parameter as the default ones, but explicitly set the options. Check this to learn how to use these cmd options.
+
 ./waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10 --Alpha=0.6 --AI=1.0 --MD=0.05 --initial_rate=5 --Hth=4500 --Lth=500 --HAI=5"
 
 CMD argument options with default value inside bracket[]:

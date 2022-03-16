@@ -32,7 +32,9 @@ If this does not work or you are looking for a simpler approach, I would suggest
 
 2. You can get download ubuntu vm from here [https://drive.google.com/drive/folders/1pagHFs4arInrFA-4-tnZQaMQuKCltMrZ?usp=sharing]
 install the vm image with vmware/vbox/...
+
 cd ~/ns-allinone-3.33/ns-3.3
+
 ./waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10" for simple demonstration
 
 3. Scenerio: a simple incast topology with one sink and N source, with limited egress bandwidth.
@@ -58,7 +60,7 @@ CMD argument options with default value inside bracket[]:
 	--h:         	Showing man [false]; --h=true shows the man page
 	--bandwitdh: 	egress bandwidth [25Mbps]
 	--incast:    	incast num [15]
-	--Alpha:     	Alpha [0.6]; EWMA weight, the larger weight, we put more value to historical data. Range: [0,1]
+	--Alpha:     	Alpha [0.6]; EWMA weight, the larger weight, we put less value to historical data. Range: [0,1]
 	--AI:        	AI [1]; Additive increasing parameter
 	--MD:        	MD [0.05]; Multiplicative decreasing parameter
 	--initial_rate:  initial_rate [5]: initial sending rate

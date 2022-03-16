@@ -1,6 +1,7 @@
 # Timely-NS3
 
 This is a Timely implementation based on TCP congestion control module in ns3
+https://github.com/ychen884/Timely-NS3
 
 ## Build
 
@@ -11,7 +12,7 @@ https://www.nsnam.org/releases/ns-3-33/documentation/
 
 https://www.nsnam.org/wiki/Installation#Linux
 
-After building successfully, you should be able to see two file path:
+After building successfully, you should be able to see two file paths:
 
 ../ns-3.33/src/internet/model/..
 
@@ -19,14 +20,23 @@ After building successfully, you should be able to see two file path:
 
 Replace all the files in these two folders with the files in this github repo under model and scratch folder 
 
-Then build gain, and you should be ready to run. 
+For someone not sure how to configure the building script:
 
-If this does not work, I would suggest downloading my virtual machine image to have a try.
+Edit the file .../ns-3.3/src/internet/wscript
+- line 323: headers.source: add model/tcp_cc_timely.h in bracket
+- line 108: obj.source: add model/tcp_cc_timely.cc in bracket
 
-2. I would also share my virtual machine image, you can get one from here [Coming soon]
+Then you can directly build with ./waf inside ns-3.3, and you should be ready to run. 
+
+If this does not work or you are looking for a simpler approach, I would suggest downloading my virtual machine image to have a try.
+
+2. You can get download ubuntu vm from here [https://drive.google.com/drive/folders/1pagHFs4arInrFA-4-tnZQaMQuKCltMrZ?usp=sharing]
+install the vm image with vmware/vbox/...
+cd ~/ns-allinone-3.33/ns-3.3
+./waf --run "scratch/test --congestion=TCPCCTIMELY --incast=10" for simple demonstration
 
 3. Scenerio: a simple incast topology with one sink and N source, with limited egress bandwidth.
-Please check the comment in test.cc for more detailed topology description.
+Please check the comment in scratch/test.cc for more detailed topology description.
 
 
 ## Run
@@ -48,14 +58,13 @@ CMD argument options with default value inside bracket[]:
 	--h:         	Showing man [false]; --h=true shows the man page
 	--bandwitdh: 	egress bandwidth [25Mbps]
 	--incast:    	incast num [15]
-	--incast:    	active incast [15]
 	--Alpha:     	Alpha [0.6]; EWMA weight, the larger weight, we put more value to historical data. Range: [0,1]
 	--AI:        	AI [1]; Additive increasing parameter
 	--MD:        	MD [0.05]; Multiplicative decreasing parameter
 	--initial_rate:  initial_rate [5]: initial sending rate
 	--Hth:       	Hth [4500]: Higher threshold
 	--Lth:       	Lth [500]: Lower threshold
-	--HAI:       	HAI counter [5]: HAI counter, number of completion events that triggers HAI mode
+	--HAI:       	HAI counter [5]: HAI counter, number of completion events with negative gradient that triggers HAI mode
 
 2. Export txt stat file and show the graphs:
 
@@ -65,5 +74,5 @@ Make sure you have python 3.8 with matplotlib installed
 
 Then run the python script main.py, make sure the output file is in the same directory
 
-I have provided the main.py in /Draw and my txt file to generate my graphs in the /Graph （LF be replaced by CRLF becuase of github）
+I have provided the main.py in /Draw and my txt output file to generate my graphs in the /Graph （LF be replaced by CRLF becuase of github）
 

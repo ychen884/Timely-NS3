@@ -78,3 +78,8 @@ Then run the python script main.py, make sure the output file is in the same dir
 
 I have provided the main.py in /Draw and my txt output file to generate my graphs in the /Graph
 
+# Reference:
+
+Mittal, R., Lam, V. T., Dukkipati, N., Blem, E., Wassel, H., Ghobadi, M., ... & Zats, D. (2015). TIMELY: RTT-based congestion control for the datacenter. ACM SIGCOMM Computer Communication Review, 45(4), 537-550.
+https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p537.pdf
+

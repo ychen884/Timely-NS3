@@ -76,5 +76,5 @@ Make sure you have python 3.8 with matplotlib installed
 
 Then run the python script main.py, make sure the output file is in the same directory
 
-I have provided the main.py in /Draw and my txt output file to generate my graphs in the /Graph （LF be replaced by CRLF becuase of github）
+I have provided the main.py in /Draw and my txt output file to generate my graphs in the /Graph
 
